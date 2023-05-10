@@ -1,7 +1,9 @@
+import './output.css';
 import './App.css';
+import ComingSoonCard from './components/ComingSoonCard';
 
 function App() {
-  return <div className="App"></div>;
+  return <ComingSoonCard />;
 }
 
 export default App;
