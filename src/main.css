@@ -89,12 +89,6 @@ h6 {
       hsl(0, 100%, 98%)
     );
 
-    --white-gradient-a5: linear-gradient(
-      135deg,
-      hsla(0, 80%, 86%, 0.6),
-      hsl(0, 74%, 74%, 0.6)
-    );
-
     --pink-gradient: linear-gradient(
       135deg,
       hsl(0, 80%, 86%),
@@ -114,13 +108,13 @@ h6 {
   .submit-button:hover {
     @apply brightness-110 cursor-pointer shadow-xl;
   }
-}
 
-.card-background-mobile {
-  background: var(--white-gradient);
-}
+  .card-background-mobile {
+    background: var(--white-gradient);
+  }
 
-.card-background-desktop {
-  background: url(./images/bg-pattern-desktop.svg) no-repeat 0% 100% / 100%,
-    var(--white-gradient);
+  .card-background-desktop {
+    background: url(./images/bg-pattern-desktop.svg) no-repeat 0% 100% / 100%,
+      var(--white-gradient);
+  }
 }

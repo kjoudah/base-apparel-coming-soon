@@ -20,7 +20,10 @@ export default function ComingSoonCard() {
 
       <div className="w-full h-[300px] bg-center bg-cover bg-[url(./images/hero-mobile.jpg)] md:bg-[url(./images/hero-desktop.jpg)] md:h-full md:bg-cover md:row-span-full md:col-start-2 md:col-end-3"></div>
       <div
-        className={`px-8 py-12 flex flex-col gap-6 card-background-mobile md:row-start-2 md:row-end-3 md:card-background-desktop md:p-24`}
+        className={`px-8 py-12 flex flex-col gap-6 md:row-start-2 md:row-end-3 
+        card-background-mobile md:card-background-desktop md:bg-no-repeat md:bg-
+        
+        md:p-24`}
       >
         <h1 className="text-4xl leading-none uppercase font-bold tracking-widest text-neutral-darkGrayishRed  md:text-5xl">
           <span className="block font-light text-primary-desaturatedRed">

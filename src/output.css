@@ -516,11 +516,6 @@ video {
       hsl(0, 0%, 100%),
       hsl(0, 100%, 98%)
     );
-  --white-gradient-a5: linear-gradient(
-      135deg,
-      hsla(0, 80%, 86%, 0.6),
-      hsl(0, 74%, 74%, 0.6)
-    );
   --pink-gradient: linear-gradient(
       135deg,
       hsl(0, 80%, 86%),
@@ -700,6 +695,10 @@ video {
   --tw-brightness: brightness(1.1);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.card-background-mobile {
+  background: var(--white-gradient);
 }
 
 .visible {
@@ -948,13 +947,11 @@ video {
   color: hsl(var(--primary-soft-red));
 }
 
-.card-background-mobile {
-  background: var(--white-gradient);
-}
-
-.card-background-desktop {
-  background: url(./images/bg-pattern-desktop.svg) no-repeat 0% 100% / 100%,
-    var(--white-gradient);
+@media (min-width: 768px) {
+  .md\:card-background-desktop {
+    background: url(./images/bg-pattern-desktop.svg) no-repeat 0% 100% / 100%,
+      var(--white-gradient);
+  }
 }
 
 .placeholder\:text-primary-desaturatedRed::-webkit-input-placeholder {
@@ -1022,6 +1019,10 @@ video {
 
   .md\:bg-cover {
     background-size: cover;
+  }
+
+  .md\:bg-no-repeat {
+    background-repeat: no-repeat;
   }
 
   .md\:p-24 {
