@@ -23,7 +23,8 @@
   */
 
 html,
-body {
+body,
+#root {
   height: 100%;
 }
 
@@ -515,6 +516,11 @@ video {
       hsl(0, 0%, 100%),
       hsl(0, 100%, 98%)
     );
+  --white-gradient-a5: linear-gradient(
+      135deg,
+      hsla(0, 80%, 86%, 0.6),
+      hsl(0, 74%, 74%, 0.6)
+    );
   --pink-gradient: linear-gradient(
       135deg,
       hsl(0, 80%, 86%),
@@ -673,16 +679,35 @@ video {
 }
 
 .submit-button {
-  background: url(./images/icon-arrow.svg) no-repeat center/25%,
+  position: absolute;
+  right: -5%;
+  top: 0px;
+  height: 100%;
+  width: 25%;
+  max-width: 24rem;
+  border-radius: 9999px;
+  outline-width: 1px;
+  outline-color: hsl(var(--primary-desaturated-red));
+  background: url(./images/icon-arrow.svg) no-repeat center/15%,
       var(--pink-gradient);
 }
 
-.hero-mobile {
-  background: url(./images/hero-mobile.jpg) no-repeat;
+.submit-button:hover {
+  cursor: pointer;
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-brightness: brightness(1.1);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.card-background-mobile {
-  background: var(--white-gradient);
+.visible {
+  visibility: visible;
+}
+
+.collapse {
+  visibility: collapse;
 }
 
 .absolute {
@@ -693,12 +718,33 @@ video {
   position: relative;
 }
 
-.right-0 {
-  right: 0px;
+.right-\[20\%\] {
+  right: 20%;
 }
 
-.top-0 {
-  top: 0px;
+.top-2 {
+  top: 0.5rem;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
 }
 
 .block {
@@ -717,24 +763,20 @@ video {
   height: 2.5rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
 
-.h-auto {
-  height: auto;
+.min-h-full {
+  min-height: 100%;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-\[20\%\] {
-  width: 20%;
+.w-8 {
+  width: 2rem;
 }
 
 .w-full {
@@ -745,6 +787,12 @@ video {
   max-width: 1024px;
 }
 
+.border-spacing-2 {
+  --tw-border-spacing-x: 0.5rem;
+  --tw-border-spacing-y: 0.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -753,16 +801,24 @@ video {
   flex-direction: column;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
 .justify-center {
   justify-content: center;
 }
 
-.gap-6 {
-  gap: 1.5rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .rounded-full {
@@ -773,12 +829,28 @@ video {
   border-width: 1px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
 .border-primary-desaturatedRed {
   border-color: hsl(var(--primary-desaturated-red));
 }
 
-.bg-primary-desaturatedRed {
-  background-color: hsl(var(--primary-desaturated-red));
+.border-primary-softRed {
+  border-color: hsl(var(--primary-soft-red));
+}
+
+.bg-\[url\(\'\/icon-error\.svg\'\)\] {
+  background-image: url('/icon-error.svg');
+}
+
+.bg-\[url\(\.\/images\/hero-mobile\.jpg\)\] {
+  background-image: url(./images/hero-mobile.jpg);
 }
 
 .bg-cover {
@@ -787,6 +859,10 @@ video {
 
 .bg-center {
   background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .p-6 {
@@ -821,14 +897,19 @@ video {
   font-family: "Josefin Sans", system-ui;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -863,18 +944,17 @@ video {
   color: hsl(var(--primary-desaturated-red));
 }
 
-@media (min-width: 640px) {
-  .sm\:hero-desktop {
-    background: url(./images/hero-desktop.jpg);
-  }
+.text-primary-softRed {
+  color: hsl(var(--primary-soft-red));
+}
 
-  .sm\:card-background-desktop {
-    background-image: url(./images/bg-pattern-desktop.svg),
-      var(--white-gradient);
-    background-position: 0% 100%, center;
-    background-size: 50%, 100%;
-    background-repeat: no-repeat, no-repeat;
-  }
+.card-background-mobile {
+  background: var(--white-gradient);
+}
+
+.card-background-desktop {
+  background: url(./images/bg-pattern-desktop.svg) no-repeat 0% 100% / 100%,
+    var(--white-gradient);
 }
 
 .placeholder\:text-primary-desaturatedRed::-webkit-input-placeholder {
@@ -885,58 +965,79 @@ video {
   color: hsl(var(--primary-desaturated-red));
 }
 
-@media (min-width: 640px) {
-  .sm\:col-start-2 {
+.focus-within\:outline-1:focus-within {
+  outline-width: 1px;
+}
+
+.focus-within\:outline-primary-desaturatedRed:focus-within {
+  outline-color: hsl(var(--primary-desaturated-red));
+}
+
+@media (min-width: 768px) {
+  .md\:col-start-2 {
     grid-column-start: 2;
   }
 
-  .sm\:col-end-3 {
+  .md\:col-end-3 {
     grid-column-end: 3;
   }
 
-  .sm\:row-span-full {
+  .md\:row-span-full {
     grid-row: 1 / -1;
   }
 
-  .sm\:row-start-2 {
+  .md\:row-start-2 {
     grid-row-start: 2;
   }
 
-  .sm\:row-end-3 {
+  .md\:row-end-3 {
     grid-row-end: 3;
   }
 
-  .sm\:mx-auto {
+  .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .sm\:h-full {
+  .md\:h-full {
     height: 100%;
   }
 
-  .sm\:grid-cols-2 {
+  .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .sm\:grid-rows-\[auto_1fr\] {
+  .md\:grid-rows-\[auto_1fr\] {
     grid-template-rows: auto 1fr;
   }
 
-  .sm\:bg-white {
+  .md\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
-  .sm\:bg-cover {
+  .md\:bg-\[url\(\.\/images\/hero-desktop\.jpg\)\] {
+    background-image: url(./images/hero-desktop.jpg);
+  }
+
+  .md\:bg-cover {
     background-size: cover;
   }
 
-  .sm\:p-10 {
-    padding: 2.5rem;
+  .md\:p-24 {
+    padding: 6rem;
   }
 
-  .sm\:text-start {
+  .md\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .md\:text-start {
     text-align: start;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }

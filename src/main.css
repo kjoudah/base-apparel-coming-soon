@@ -18,7 +18,8 @@
     3. Allow percentage-based heights in the application
   */
 html,
-body {
+body,
+#root {
   height: 100%;
 }
 /*
@@ -87,6 +88,13 @@ h6 {
       hsl(0, 0%, 100%),
       hsl(0, 100%, 98%)
     );
+
+    --white-gradient-a5: linear-gradient(
+      135deg,
+      hsla(0, 80%, 86%, 0.6),
+      hsl(0, 74%, 74%, 0.6)
+    );
+
     --pink-gradient: linear-gradient(
       135deg,
       hsl(0, 80%, 86%),
@@ -97,27 +105,22 @@ h6 {
 
 @layer components {
   .submit-button {
-    background: url(./images/icon-arrow.svg) no-repeat center/25%,
+    @apply absolute right-[-5%] top-0 w-[25%] h-full outline-1 outline-primary-desaturatedRed rounded-full max-w-sm;
+
+    background: url(./images/icon-arrow.svg) no-repeat center/15%,
       var(--pink-gradient);
   }
 
-  .hero-desktop {
-    background: url(./images/hero-desktop.jpg);
+  .submit-button:hover {
+    @apply brightness-110 cursor-pointer shadow-xl;
   }
+}
 
-  .hero-mobile {
-    background: url(./images/hero-mobile.jpg) no-repeat;
-  }
+.card-background-mobile {
+  background: var(--white-gradient);
+}
 
-  .card-background-mobile {
-    background: var(--white-gradient);
-  }
-
-  .card-background-desktop {
-    background-image: url(./images/bg-pattern-desktop.svg),
-      var(--white-gradient);
-    background-position: 0% 100%, center;
-    background-size: 50%, 100%;
-    background-repeat: no-repeat, no-repeat;
-  }
+.card-background-desktop {
+  background: url(./images/bg-pattern-desktop.svg) no-repeat 0% 100% / 100%,
+    var(--white-gradient);
 }

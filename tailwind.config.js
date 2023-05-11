@@ -17,7 +17,8 @@ module.exports = {
     colors: {
       primary: {
         desaturatedRed: 'hsl(var(--primary-desaturated-red))',
-        softRed: 'hsl(var(--primary-soft-red)',
+        softRed: 'hsl(var(--primary-soft-red))',
+        buttonHover: 'hsl(var(--primary-desaturated-red) / 0.5)',
       },
       neutral: {
         darkGrayishRed: 'hsl(var(--dark-grayish-red))',
